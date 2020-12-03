@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 5390473398421327079}
   - component: {fileID: 5390473398421327076}
   - component: {fileID: 5390473398421327082}
+  - component: {fileID: 1895180966382715609}
   m_Layer: 0
   m_Name: Demon
-  m_TagString: Player
+  m_TagString: Demon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -207,3 +208,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1895180966382715609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5390473398421327086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f11d11ceb284d20969d55699cdf8a08f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteTexture: {fileID: 0}
+  in_framePerSec: 0
+  in_gridX: 0
+  in_gridY: 0
+  speed: 0

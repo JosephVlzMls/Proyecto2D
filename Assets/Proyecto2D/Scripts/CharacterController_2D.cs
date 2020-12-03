@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CharacterController_2D : MonoBehaviour
 {
+    public int items;
     public float f_speed = 5.0f;
     public Texture2D doorOpenTexture;
     public Texture2D doorCloseTecture;
@@ -21,7 +22,6 @@ public class CharacterController_2D : MonoBehaviour
     private float f_height;
     private float f_lastY;
     private bool b_hasKey;
-    private int rockHands;
 
     Rigidbody rigidbody;
     MeshRenderer renderer;
@@ -48,7 +48,6 @@ public class CharacterController_2D : MonoBehaviour
 
         //Start with no Key
         b_hasKey = false;
-        rockHands = 3;
         Mesh mesh = GetComponent<MeshFilter>().sharedMesh;
         f_height = mesh.bounds.size.y * transform.localScale.y;
         f_lastY = transform.position.y;
@@ -140,11 +139,18 @@ public class CharacterController_2D : MonoBehaviour
         Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, Camera.main.transform.position.z);
     }
 
+    void OnCollisionEnter(Collision collision) {
+        if(collision.collider.CompareTag("Demon")) {
+            Destroy(gameObject);
+            restartButton.SetActive(true);
+        }
+    }
+
     public IEnumerator OnTriggerEnter(Collider hit)
     {
         if (hit.gameObject.tag == "Item")
         {
-            rockHands--;
+            items--;
             audio.PlayOneShot(getItemSound);
             Destroy(hit.gameObject);
         }
@@ -160,7 +166,7 @@ public class CharacterController_2D : MonoBehaviour
         }
         if (hit.gameObject.tag == "Door")
         {
-            if (b_hasKey && rockHands == 0)
+            if (b_hasKey && items == 0)
             {
                 audio.volume = 1.0f;
                 audio.PlayOneShot(doorOpenSound);

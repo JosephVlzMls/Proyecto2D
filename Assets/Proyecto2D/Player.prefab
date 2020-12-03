@@ -33,7 +33,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5390473398421327086}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -25, y: 16, z: 0}
+  m_LocalPosition: {x: -29, y: 23, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b9149a29771c8e4e8cad087d0289734, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  items: 0
   f_speed: 5
   doorOpenTexture: {fileID: 2800000, guid: 362f9bd13a5da417bb5e6ecf48000a96, type: 3}
   doorCloseTecture: {fileID: 2800000, guid: 7fcf2e416fb6d4768b10d9677026a7d2, type: 3}
